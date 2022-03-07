@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Company</title>
+</head>
+<body>
+Add Company:
+<form action="/addCompany" method="post">
+    <input th:if="${company!=null}" type="hidden" th:value="${company.id}" name="id">
+    Name: <input type="text" name="name" th:value="${company==null} ? '' : ${company.name}"/><br>
+    Size: <input type="number" name="size" th:value="${company==null} ? '' : ${company.size}"/><br>
+    Address: <input type="text" name="address" th:value="${company==null} ? '' : ${company.address}"/><br>
+    <input type="submit" value="add">
+</form>
+
+</body>
+</html>
