@@ -5,13 +5,13 @@
     <title>Add Company</title>
 </head>
 <body>
-Add Company:
+<p th:text="#{companies.add}"></p>
 <form action="/addCompany" method="post">
     <input th:if="${company!=null}" type="hidden" th:value="${company.id}" name="id">
-    Name: <input type="text" name="name" th:value="${company==null} ? '' : ${company.name}"/><br>
-    Size: <input type="number" name="size" th:value="${company==null} ? '' : ${company.size}"/><br>
-    Address: <input type="text" name="address" th:value="${company==null} ? '' : ${company.address}"/><br>
-    <input type="submit" value="add">
+    <p th:text="#{companies.name}"></p> <input type="text" name="name" th:value="${company==null} ? '' : ${company.name}"/><br>
+    <p th:text="#{companies.size}"></p> <input type="number" name="size" th:value="${company==null} ? '' : ${company.size}"/><br>
+    <p th:text="#{companies.address}"></p> <input type="text" name="address" th:value="${company==null} ? '' : ${company.address}"/><br>
+    <input type="submit" value="add" th:attr="value=#{company.add}">
 </form>
 
 </body>
